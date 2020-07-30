@@ -35,7 +35,7 @@ df["P_SAFE"].replace({"QQ":pd.NA, "UU":pd.NA, "XX":pd.NA, "NN":pd.NA}, inplace=T
 df["P_USER"].replace({"U":pd.NA}, inplace=True)'''
 
 y = df["C_CONF"]
-X = df.drop(["C_CONF", "C_MNTH", "C_WDAY", "C_HOUR", "V_ID"], axis=1)
+X = df.drop(["C_CONF", "C_MNTH", "C_WDAY", "C_HOUR", "V_ID", "C_CASE", "C_YEAR"], axis=1)
 
 X_train, X_test, y_train, y_test =  train_test_split(X, y, test_size=0.3)
 imp = SimpleImputer(missing_values=np.nan,strategy="mean")
